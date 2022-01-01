@@ -1,14 +1,28 @@
 import './App.css';
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+import Routes from './components/Routes';
+import NavigationBar from './components/NavigationBar';
 
-function App() {
+
+
+
+const App =()=> {
+
+  const handleMessage = ()=> {
+    console.log("hey!")
+  }
+
+
+
+
   return (
-    <div className="App">
-          <h1 className="text-3xl font-bold underline text-purple-500">
-            Hello world!
-          </h1>
-    </div>
+    <>
+        <NavigationBar />
+        <div>
+            <Routes />
+        </div>
+    </>
   );
 }
-
-export default App;
+export default withRouter(App);
