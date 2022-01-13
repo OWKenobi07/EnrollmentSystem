@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn{
-    @apply text-gray-700 p-2 border-opacity-60 font-semibold focus:outline-none;
+.btn-nav{
+    @apply text-gray-100 font-semibold focus:outline-none;
+  }
+
+.btn-nav-secondary{
+  @apply hover:bg-purple-800 hover:text-white py-2 font-semibold text-center text-purple-800;
+}
+  .dropdown:hover .dropdown-menu {
+    display: block;
   }

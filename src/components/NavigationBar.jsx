@@ -9,10 +9,26 @@ const NavigationBar = (props) => {
     
     return (
         <>
-            <div className='bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 space-x-5 p-1'>
-                <button className ='btn' onClick={()=>handleNavigatePage("/")}>Home</button>
-                <button className ='btn' onClick={()=>handleNavigatePage("/EnrolleList")}>Student List</button>
-            </div>
+            <nav className=' bg-purple-800 shadow-md shadow-purple-700 text-center space-x-5 p-3'>
+                <button className ='btn-nav' onClick={()=>handleNavigatePage("/")}>Home</button>
+               
+
+                <div class="dropdown inline-block relative z-0">
+                <button class="btn-nav">
+                <span class="mr-1">Student Services</span>
+                </button>
+                <ul class="dropdown-menu absolute hidden text-gray-700 pt-3 w-40">
+                <div class="bg-violet-50 flex flex-col justify-center rounded-b px-2 space-y-1 p-2">
+                  
+                    <button className ='btn-nav-secondary' onClick={()=>handleNavigatePage("/EnrolleeList")}>Student List</button>
+                    <button className ='btn-nav-secondary' onClick={()=>handleNavigatePage("/")}>Enroll Now!</button>
+                   
+                </div>
+
+
+                </ul>       
+                </div>
+            </nav>
         </>
     );
 };

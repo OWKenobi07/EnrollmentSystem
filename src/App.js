@@ -17,9 +17,12 @@ const App =()=> {
 
 
   return (
-    <>
-        <NavigationBar />
-        <div>
+    <>  
+        <div className='z-0'>
+          <NavigationBar />
+        </div>
+      
+        <div className='py-5'>
             <Routes />
         </div>
     </>
