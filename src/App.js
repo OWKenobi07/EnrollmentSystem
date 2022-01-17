@@ -5,6 +5,7 @@ import Routes from './components/Routes';
 import NavigationBar from './components/NavigationBar';
 import LoginForm from './components/LoginForm';
 
+import {Form, Input, Carousel} from 'antd';
 
 
 
@@ -14,7 +15,7 @@ const App =()=> {
   const [error, setError] = useState("")
 
   const handleLogin = details => {
-    console.log(details.userName)
+    //details field are coming from a prop on LoginForm.jsx
 
     if(details.userName != ""){
       setIsLogin(true)
@@ -37,6 +38,8 @@ const App =()=> {
               <Routes />
           </div>
         </div>) : (<div><LoginForm Login={handleLogin} error={error} /></div>)}
+
+                     
     </>
   );
 }
