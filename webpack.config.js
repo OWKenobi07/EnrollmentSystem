@@ -7,7 +7,6 @@ module.exports = {
 
     entry: path.resolve(__dirname, './src/index.js'),
   
-
     devServer:{
         port: 3000,
         hot: true,

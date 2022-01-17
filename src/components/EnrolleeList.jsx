@@ -52,7 +52,7 @@ const Enrollee = () => {
     return (
         <>
           <div class='w-screen px-20 py-3 bg-green-200'>
-          <Table dataSource={dataSource} columns={columns} bordered={true}/>
+            <Table dataSource={dataSource} columns={columns} bordered={true}/>
           </div>
            
         </>

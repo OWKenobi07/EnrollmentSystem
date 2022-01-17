@@ -9,6 +9,17 @@
 .btn-nav-secondary{
   @apply hover:bg-purple-800 hover:text-white py-2 font-semibold text-center text-purple-800;
 }
+
+.btn-agree{
+  @apply bg-emerald-500 border-solid border-2 rounded-md font-semibold text-white p-3 transition ease-in-out 
+  delay-150 hover:bg-lime-200 hover:text-black hover:translate-y-1 hover:scale-90 duration-300;
+}
+
+.btn-disagree{
+  @apply bg-red-700 border-solid border-2 rounded-md font-semibold text-white p-3 transition ease-in-out 
+  delay-150 hover:bg-red-200 hover:text-black hover:translate-y-1 hover:scale-90 duration-300;
+}
+
   .dropdown:hover .dropdown-menu {
     display: block;
   }
