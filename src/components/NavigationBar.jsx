@@ -20,14 +20,16 @@ const NavigationBar = (props) => {
                 <ul class="dropdown-menu absolute hidden text-gray-700 pt-3 w-40">
                 <div class="bg-violet-50 flex flex-col justify-center rounded-b px-2 space-y-1 p-2 rounded-sm">
                   
-                    <button className ='btn-nav-secondary' onClick={()=>handleNavigatePage("/EnrolleeList")}>Student List</button>
+                    <button className ='btn-nav-secondary' onClick={()=>handleNavigatePage("/EnrolleeList")}>Students List</button>
                     <button className ='btn-nav-secondary' onClick={()=>handleNavigatePage("/EnrollForm")}>Enroll Now!</button>
+                    <button className ='btn-nav-secondary' onClick={()=>handleNavigatePage("/StudentApplicants")}>Applicants List</button>
                    
                 </div>
 
-
                 </ul>       
                 </div>
+
+                <button className ='btn-nav' onClick={()=>handleNavigatePage("/UserRegistration")}>Register User</button>
             </nav>
         </>
     );

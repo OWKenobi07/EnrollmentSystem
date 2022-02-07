@@ -11,7 +11,7 @@ import {Form, Input, Carousel} from 'antd';
 
 const App =()=> {
 
-  const [isLogin,setIsLogin] = useState(false) 
+  const [isLogin,setIsLogin] = useState(true) 
   const [error, setError] = useState("")
 
   const handleLogin = details => {
@@ -21,9 +21,6 @@ const App =()=> {
       setIsLogin(true)
     }
   }
-
-
-
 
   return (
     <>  
