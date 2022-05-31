@@ -8,15 +8,16 @@ import './index.css';
 import "antd/dist/antd.css";
 import App from './App';
 
-axios.defaults.baseURL = "http://localhost:14674/";
+//axios.defaults.baseURL = "http://localhost:14674/";
+axios.defaults.baseURL = "http://localhost:5000/";
 
 const appElement = document.getElementById('app');
 
 ReactDOM.render(
 <React.Fragment>
-    <Router>
-        <App />
-    </Router>
+            <Router>
+                <App />
+            </Router>
 </React.Fragment>
 ,appElement);
 

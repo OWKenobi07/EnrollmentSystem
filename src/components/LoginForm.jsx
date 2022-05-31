@@ -1,13 +1,23 @@
 import React, {useState} from 'react';
-import {Form, Input, Carousel} from 'antd';
-
+import {Form, Input, Carousel, message} from 'antd';
+import axios from 'axios';
+import { useContext } from 'react/cjs/react.development';
+import { UserContext } from '../context/UserContext';
 
 function LoginForm({Login, error}) {
-    
-    const[details, setDetails] = useState({userName:"", password:""})
+  
 
-    const handleSubmit = values =>{
-        Login(values);
+    const handleSubmit = async(values) =>{
+        
+        const response = await axios.post("api/loginuser", values);
+
+        if(response.data.stat === 1){
+         Login(response.data);
+         localStorage.setItem("sID", response.data.sID)  
+         message.success(response.data.message);
+        }else{
+         message.warning(response.data.message);
+        }
     }
     
     const contentStyle = {
@@ -17,6 +27,7 @@ function LoginForm({Login, error}) {
         textAlign: 'center',
       };
 
+    
 
     return ( 
         <>

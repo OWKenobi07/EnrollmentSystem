@@ -8,16 +8,16 @@ const UserRegistration = () => {
     const handleSubmit = async (values) =>{
            
         try {
-        const response = await axios.post("/api/saveuser", values);
-        if (response.data.stat === 1) {
-          message.success(response.data.message);
-        } else {
-          message.warning(response.data.message);
+            const response = await axios.post("/api/saveuser", values);
+            if (response.data.stat === 1) {
+            message.success(response.data.message);
+            } else {
+            message.warning(response.data.message);
+            }
+        } catch (error) {
+            console.log(error);
         }
-      } catch (error) {
-        console.log(error);
-      }
-
+      
         
     }
 

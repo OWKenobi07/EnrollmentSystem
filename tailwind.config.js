@@ -5,5 +5,16 @@ module.exports = {
   theme: {
     extend: {},
   },
+  variants:{
+   
+    extend: {
+      backgroundColor: ["active"],
+      borderColor:["visited"],
+      textColor:["visited"],
+      transform: ["active"],
+      scale:["active"]
+    },
+  },
+
   plugins: [],
-}
+};

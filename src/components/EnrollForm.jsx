@@ -78,7 +78,7 @@ const EnrollForm = () => {
                             }
                         ]}
                         >
-                            <Input placeholder='Please enter your Last name' onChange={(e)=>setStudentName({...studentName, lastName: e.target.value})} value={studentName.lastName} />
+                            <Input placeholder='Please enter your Last name' value={studentName.lastName} />
                         </Form.Item>
 
                         <Form.Item
@@ -92,7 +92,7 @@ const EnrollForm = () => {
                             }
                         ]}
                         >
-                            <Input placeholder='Please enter your First name' onChange={(e)=>setStudentName({...studentName, firstName: e.target.value})} value={studentName.firstName} />
+                            <Input placeholder='Please enter your First name' value={studentName.firstName} />
                         </Form.Item>
 
                         <Form.Item
@@ -106,7 +106,7 @@ const EnrollForm = () => {
                             }
                         ]}
                         >
-                            <Input placeholder='Please enter your Middle name' onChange={(e)=>setStudentName({...studentName, middleName: e.target.value})} value={studentName.middleName}/>
+                            <Input placeholder='Please enter your Middle name' value={studentName.middleName}/>
                         </Form.Item>
 
                         <Form.Item
@@ -119,7 +119,7 @@ const EnrollForm = () => {
                             }
                         ]}
                         >
-                            <Input placeholder='if applicable' onChange={(e)=>setStudentName({...studentName, suffix: e.target.value})} />
+                            <Input placeholder='if applicable' />
                         </Form.Item>
 
                         <Form.Item
