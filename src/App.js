@@ -73,7 +73,6 @@ const App =()=> {
               <UserContext.Provider value={userFullname}>
               <div>
                   <div>
-                    <h1> Larrie</h1>
                   <NavigationBar />
                 </div>
               
