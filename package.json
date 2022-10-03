@@ -37,7 +37,10 @@
   "scripts": {
   
     
-  "serve": "webpack serve --mode development"
+  "serve": "webpack serve --mode development",
+  "build": "webpack build --mode production",
+  "predeploy": "npm run build",
+  "deploy":"gh-pages -d build"
   
   },
   
