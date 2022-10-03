@@ -1,171 +1,783 @@
 {
   
-  "name": "enrollmentsystem",
+
+
+
+
+
+
+
+"name": "enrollmentsystem",
   
-  "version": "0.1.0",
+
+
+
+
+
+
+
+"version": "0.1.0",
   
-  "private": true,
+
+
+
+
+
+
+
+"private": true,
   
-  "dependencies": {
+
+
+
+
+
+
+
+"dependencies": {
   
-    
-  "@testing-library/jest-dom": "^5.16.1",
+
+
+
+
+
+
+
   
-    
-  "@testing-library/react": "^12.1.2",
+
+
+
+
+
+
+
+"@testing-library/jest-dom": "^5.16.1",
   
-    
-  "@testing-library/user-event": "^13.5.0",
+
+
+
+
+
+
+
   
-    
-  "react": "^17.0.2",
+
+
+
+
+
+
+
+"@testing-library/react": "^12.1.2",
   
-    
-  "react-dom": "^17.0.2",
+
+
+
+
+
+
+
   
-    
-  "react-router-dom": "^5.2.0",
+
+
+
+
+
+
+
+"@testing-library/user-event": "^13.5.0",
   
-    
-  "react-scripts": "5.0.0",
+
+
+
+
+
+
+
   
-    
-  "web-vitals": "^2.1.2"
+
+
+
+
+
+
+
+"react": "^17.0.2",
   
-  },
+
+
+
+
+
+
+
   
-  "scripts": {
+
+
+
+
+
+
+
+"react-dom": "^17.0.2",
   
-    
-  "serve": "webpack serve --mode development",
-  "build": "webpack build --mode production",
-  "predeploy": "npm run build",
-  "deploy":"gh-pages -d build"
+
+
+
+
+
+
+
   
-  },
+
+
+
+
+
+
+
+"react-router-dom": "^5.2.0",
   
-  "eslintConfig": {
+
+
+
+
+
+
+
   
-    
-  "extends": [
+
+
+
+
+
+
+
+"react-scripts": "5.0.0",
   
-    
-    
-  "react-app",
+
+
+
+
+
+
+
   
-    
-    
-  "react-app/jest"
+
+
+
+
+
+
+
+"web-vitals": "^2.1.2"
   
-    
-  ]
+
+
+
+
+
+
+
+},
   
-  },
+
+
+
+
+
+
+
+"scripts": {
   
-  "browserslist": {
+
+
+
+
+
+
+
   
-    
-  "production": [
+
+
+
+
+
+
+
+"serve": "webpack serve --mode development",
   
-    
-    
-  ">0.2%",
+
+
+
+
+
+
+
   
-    
-    
-  "not dead",
+
+
+
+
+
+
+
+"build": "webpack build --mode production",
   
-    
-    
-  "not op_mini all"
+
+
+
+
+
+
+
   
-    
-  ],
+
+
+
+
+
+
+
+"predeploy": "npm run build",
   
-    
-  "development": [
+
+
+
+
+
+
+
   
-    
-    
-  "last 1 chrome version",
+
+
+
+
+
+
+
+"deploy": "gh-pages -d dist"
   
-    
-    
-  "last 1 firefox version",
+
+
+
+
+
+
+
+},
   
-    
-    
-  "last 1 safari version"
+
+
+
+
+
+
+
+"eslintConfig": {
   
-    
-  ]
+
+
+
+
+
+
+
   
-  },
+
+
+
+
+
+
+
+"extends": [
   
-  "devDependencies": {
+
+
+
+
+
+
+
   
-    
-  "@babel/core": "^7.16.7",
+
+
+
+
+
+
+
   
-    
-  "@babel/preset-env": "^7.16.7",
+
+
+
+
+
+
+
+"react-app",
   
-    
-  "@babel/preset-react": "^7.16.7",
+
+
+
+
+
+
+
   
-    
-  "antd": "^4.18.2",
+
+
+
+
+
+
+
   
-    
-  "autoprefixer": "^10.4.1",
+
+
+
+
+
+
+
+"react-app/jest"
   
-    
-  "axios": "^0.24.0",
+
+
+
+
+
+
+
   
-    
-  "babel-loader": "^8.2.3",
+
+
+
+
+
+
+
+]
   
-    
-  "css-loader": "^6.5.1",
+
+
+
+
+
+
+
+},
   
-    
-  "dotenv": "^10.0.0",
+
+
+
+
+
+
+
+"browserslist": {
   
-    
-  "dotenv-webpack": "^7.0.3",
+
+
+
+
+
+
+
   
-    
-  "file-loader": "^6.2.0",
+
+
+
+
+
+
+
+"production": [
   
-    
-  "html-webpack-plugin": "^5.5.0",
+
+
+
+
+
+
+
   
-    
-  "postcss": "^8.4.5",
+
+
+
+
+
+
+
   
-    
-  "sass": "^1.45.2",
+
+
+
+
+
+
+
+">0.2%",
   
-    
-  "sass-loader": "^12.4.0",
+
+
+
+
+
+
+
   
-    
-  "style-loader": "^3.3.1",
+
+
+
+
+
+
+
   
-    
-  "tailwindcss": "^3.0.8",
+
+
+
+
+
+
+
+"not dead",
   
-    
-  "webpack": "^5.65.0",
+
+
+
+
+
+
+
   
-    
-  "webpack-cli": "^4.9.1",
+
+
+
+
+
+
+
   
-    
-  "webpack-dev-server": "^4.7.2",
+
+
+
+
+
+
+
+"not op_mini all"
   
-    
-  "webpack-node-externals": "^3.0.0"
+
+
+
+
+
+
+
   
-  }
+
+
+
+
+
+
+
+],
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"development": [
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"last 1 chrome version",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"last 1 firefox version",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"last 1 safari version"
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+]
+  
+
+
+
+
+
+
+
+},
+  
+
+
+
+
+
+
+
+"devDependencies": {
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"@babel/core": "^7.16.7",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"@babel/preset-env": "^7.16.7",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"@babel/preset-react": "^7.16.7",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"antd": "^4.18.2",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"autoprefixer": "^10.4.1",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"axios": "^0.24.0",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"babel-loader": "^8.2.3",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"css-loader": "^6.5.1",
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+"dotenv": "^10.0.0",
+"dotenv-webpack": "^7.0.3",
+"file-loader": "^6.2.0",
+"gh-pages": "^4.0.0",
+"html-webpack-plugin": "^5.5.0", 
+"postcss": "^8.4.5",
+"sass": "^1.45.2",
+"sass-loader": "^12.4.0",
+"style-loader": "^3.3.1",
+"tailwindcss": "^3.0.8",
+"webpack": "^5.65.0",
+"webpack-cli": "^4.10.0",
+"webpack-dev-server": "^4.7.2",
+"webpack-node-externals": "^3.0.0"
+}
 }
