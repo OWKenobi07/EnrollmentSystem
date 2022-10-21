@@ -7,17 +7,12 @@ import LoginForm from './components/LoginForm';
 import { UserContext } from './context/UserContext';
 import axios from 'axios';
 
-
-
-
-import {Form, Input, Carousel} from 'antd';
-
 axios.defaults.withCredentials = false;
 
 const App =()=> {
 
   
-  const [isLogin,setIsLogin] = useState(false)
+  const [isLogin,setIsLogin] = useState(true)
   const [sID, setSID] = useState(null) 
   const [error, setError] = useState("")
   const [addedEntry, setAddedEntry] = useState([]);

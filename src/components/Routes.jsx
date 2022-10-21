@@ -14,7 +14,7 @@ const Routes = () => {
             <Switch>
                  <Route exact strict path = '/' component={Home} render = {() => <Home/>}/>
                  <Route exact strict path = '/EnrolleeList' component={EnrolleeList} render = {() => <EnrolleeList/>}/>
-                 <Route exact strict path = '/EnrollForm' component={EnrollForm} render = {() => <EnrolleeList/>}/>
+                 <Route exact strict path = '/EnrollForm' component={EnrollForm} render = {() => <EnrollForm/>}/>
                  <Route exact strict path = '/UserRegistration' component={UserRegistration} render = {()=> <UserRegistration />} />
                  <Route exact strict path = '/StudentApplicants' component={StudentApplicants} render = {()=> <StudentApplicants/>} />
             </Switch>

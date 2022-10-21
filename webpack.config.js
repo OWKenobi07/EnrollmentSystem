@@ -2,6 +2,7 @@
 const path = require('path')
 const tailwindcss = require('tailwindcss');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
 
@@ -11,15 +12,26 @@ module.exports = {
         port: 3000,
         hot: true,
         open: true,
-        historyApiFallback: true
-        
+        historyApiFallback: true     
+    },
+
+    optimization: {
+      splitChunks: {
+        chunks:"all"
+        }
     },
 
     plugins: [
         new HtmlWebpackPlugin({
             base: '/',
             template: './src/index.html',
-          })
+          }),
+
+        new BundleAnalyzerPlugin({
+          generateStatsFile:false
+        }),
+
+
     ],
 
     module :{
