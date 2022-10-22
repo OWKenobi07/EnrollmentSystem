@@ -2,11 +2,16 @@
 const path = require('path')
 const tailwindcss = require('tailwindcss');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
 
     entry: path.resolve(__dirname, './src/index.js'),
+
+    output:{
+      path: path.resolve(__dirname, './build'),
+      filename: 'bundle.js',
+    },
   
     devServer:{
         port: 3000,
@@ -15,22 +20,12 @@ module.exports = {
         historyApiFallback: true     
     },
 
-    optimization: {
-      splitChunks: {
-        chunks:"all"
-        }
-    },
 
     plugins: [
         new HtmlWebpackPlugin({
-            base: '/',
             template: './src/index.html',
           }),
-
-        new BundleAnalyzerPlugin({
-          generateStatsFile:false
-        }),
-
+         new CompressionPlugin(),
 
     ],
 
