@@ -12,7 +12,7 @@ axios.defaults.withCredentials = false;
 const App =()=> {
 
   
-  const [isLogin,setIsLogin] = useState(true)
+  const [isLogin,setIsLogin] = useState(false)
   const [sID, setSID] = useState(null) 
   const [error, setError] = useState("")
   const [addedEntry, setAddedEntry] = useState([]);
@@ -56,7 +56,6 @@ const App =()=> {
      setUserFullname(res.data[0].fullname)
 
     })
-   
    
  },[isLogin])
 

@@ -1,31 +1,34 @@
 //require('dotenv').config({ path: './.env' });
 const path = require('path')
+const glob = require('glob')
 const tailwindcss = require('tailwindcss');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CompressionPlugin = require("compression-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
+
+
+
+const PATHS = {
+  src: path.join(__dirname, 'src')
+}
 
 module.exports = {
 
     entry: path.resolve(__dirname, './src/index.js'),
 
+    optimization: {
+      minimize: true,
+      minimizer: [new TerserPlugin()],
+    },
+
     output:{
       path: path.resolve(__dirname, './build'),
       filename: 'bundle.js',
     },
-  
-    devServer:{
-        port: 3000,
-        hot: true,
-        open: true,
-        historyApiFallback: true     
-    },
-
 
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
           }),
-         new CompressionPlugin(),
 
     ],
 
@@ -37,9 +40,34 @@ module.exports = {
                     extensions: ['.js', '.jsx', '.ts', '.tsx'],
                   },
                     use: {
-                        loader: 'babel-loader'
+                        loader: 'babel-loader',
+                        // options: {
+
+                        //   plugins: [
+                        //     // modularly import the JS and styles that we use from ‘antd’
+                        //     [
+                        //       'import',
+                        //       { libraryName: 'antd', style: true },
+                        //       'antd',
+                        //     ],
+                        //     // modularly import the JS that we use from ‘@ant-design/icons’
+                        //     [
+                        //       'import',
+                        //       {
+                        //         libraryName: '@ant-design/icons',
+                        //         libraryDirectory: 'es/icons',
+                        //       },
+                        //       'antd-icons',
+                        //     ],
+                        //   ]
+
+                        // }
+
+                   
                     },
+                    
                     exclude: [/node_modules/],
+
                 },
 
                 {
