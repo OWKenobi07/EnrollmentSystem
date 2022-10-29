@@ -12,7 +12,7 @@ axios.defaults.withCredentials = false;
 const App =()=> {
 
   
-  const [isLogin,setIsLogin] = useState(false)
+  const [isLogin,setIsLogin] = useState(true)
   const [sID, setSID] = useState(null) 
   const [error, setError] = useState("")
   const [addedEntry, setAddedEntry] = useState([]);
@@ -27,35 +27,24 @@ const App =()=> {
       setIsLogin(true);
       setUserFullname(details.userFullname)
       setSID(localStorage.getItem("sID"))
+
+      console.log("handle login")
       
     }
   }
 
 
-  // const handleLoginState = async () => {
-  //   var id = localStorage.getItem("sID")
-  //   const response = await axios.get("api/loginuser", {params: { sID: id }})
-
-  //   if (response){
-  //     return true
-  //     setUserFullname(response.data[0].fullname)
-  //   }else{
-  //     return false
-  //   }
-  // }
-
-
-  
-
   useEffect(async () =>{
-    
-    var id = localStorage.getItem("sID")
-    axios.get("api/loginuser", {params: { sID: id }}).then(res=>{
-      
-     setIsLogin(true)
-     setUserFullname(res.data[0].fullname)
 
-    })
+    if (isLogin === false){
+        var id = localStorage.getItem("sID")
+        axios.get("api/loginuser", {params: { sID: id }}).then(res=>{
+      
+        setIsLogin(true)
+        setUserFullname(res.data[0].fullname)
+        
+       })
+    }
    
  },[isLogin])
 

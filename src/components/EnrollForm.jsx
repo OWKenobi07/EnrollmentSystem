@@ -38,9 +38,12 @@ const { Option } = Select;
 const EnrollForm = () => {
     
     const [studentName, setStudentName] = useState({lastName: "", firstName: "", middleName: "", suffix: ""})
+    const [fatherName, setFatherName] = useState({fLastName: "", fFirstName: "", fMiddleName: "", fSuffix: ""})
+    const [motherName, setMotherName] = useState({mLastName: "", mFirstName: "", mMiddleName: "", mSuffix: ""})
    
 
     const handleSubmitForm = async(values) =>{
+        
         
         try {
             const response = await axios.post("/api/savestudentapplicant", values);
@@ -49,6 +52,7 @@ const EnrollForm = () => {
             } else {
               message.warning(response.data.message);
             }
+           
           } catch (error) {
             console.log(error);
           }
@@ -141,7 +145,305 @@ const EnrollForm = () => {
 
                             </Select>
                         </Form.Item>
+
+                        <Form.Item
+                        label="Date of Birth"
+                        name="dBirth"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='if applicable' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Mobile No."
+                        name="mobileNo"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='09xxxxxxxxx' />
+                        </Form.Item>
+                        <Form.Item
+                        label="Email Address"
+                        name="emailAddress"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='Email' />
+                        </Form.Item>
                     </div>
+
+
+                    <h2 className='text-l pl-8 font-bold pb-2'>Complete Address</h2>
+                    <div className='grid grid-cols-4 px-3 gap-x-3'>
+
+                        <Form.Item
+                        label="Address"
+                        name="address"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='Enter your Address' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Barangay"
+                        name="barangay"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='Enter your Barangay' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Municipality"
+                        name="municipality"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='Enter your Municipality' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Province"
+                        name="province"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='Enter your province' />
+                        </Form.Item>
+                    
+
+                    </div>
+
+
+{/* Parents */}
+                    <h2 className='text-l pl-8 font-bold pb-2'>Father's Information</h2>
+                    <div className='grid grid-cols-4 px-3 gap-x-3'> 
+                   
+                    <Form.Item
+                        label="Last Name"
+                        name="fLastName"
+
+                        rules={[
+                            {
+                                required: true,
+                                message: "Last Name required!"
+                            }
+                        ]}
+                        >
+                            <Input placeholder="Father's Last name" value={fatherName.fLastName} />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="First Name"
+                        name="fFirstName"
+
+                        rules={[
+                            {
+                                required: true,
+                                message: "First Name required!"
+                            }
+                        ]}
+                        >
+                            <Input placeholder="Father's First name" value={fatherName.fFirstName} />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Middle Name"
+                        name="fMiddleName"
+
+                        rules={[
+                            {
+                                required: true,
+                                message: "Middle Name required!"
+                            }
+                        ]}
+                        >
+                            <Input placeholder="Father's Middle name" value={fatherName.fMiddleName}/>
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Suffix"
+                        name="fSuffix"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='if applicable' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Date of Birth"
+                        name="fDbirth"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='Birth date' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Occupation"
+                        name="fOccupation"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='if applicable' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Mobile No."
+                        name="fMobileNo"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                             <Input placeholder='09xxxxxxxxx' />
+                        </Form.Item>
+
+                    </div>
+
+                    <h2 className='text-l pl-8 font-bold pb-2'>Mother's Maiden Information</h2>
+                    <div className='grid grid-cols-4 px-3 gap-x-3'> 
+                   
+                    <Form.Item
+                        label="Last Name"
+                        name="mLastName"
+
+                        rules={[
+                            {
+                                required: true,
+                                message: "Last Name required!"
+                            }
+                        ]}
+                        >
+                            <Input placeholder="Mother's Last name" value={motherName.mLastName} />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="First Name"
+                        name="mFirstName"
+
+                        rules={[
+                            {
+                                required: true,
+                                message: "First Name required!"
+                            }
+                        ]}
+                        >
+                            <Input placeholder="Mother's First name" value={motherName.mFirstName} />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Middle Name"
+                        name="mMiddleName"
+
+                        rules={[
+                            {
+                                required: true,
+                                message: "Middle Name required!"
+                            }
+                        ]}
+                        >
+                            <Input placeholder="Mother's Middle name" value={motherName.Middle}/>
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Suffix"
+                        name="mSuffix"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='if applicable' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Date of Birth"
+                        name="mDbirth"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='Birth date' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Occupation"
+                        name="mOccupation"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                            <Input placeholder='if applicable' />
+                        </Form.Item>
+
+                        <Form.Item
+                        label="Mobile No."
+                        name="mMobileNo"
+
+                        rules={[
+                            {
+                              
+                            }
+                        ]}
+                        >
+                             <Input placeholder='09xxxxxxxxx' />
+                        </Form.Item>
+
+                    </div>
+
 
                     <h1 className='text-xl pl-2 font-bold pb-2'>Educational Background</h1>
                     <div className='grid grid-cols-4 px-4 gap-x-3'>

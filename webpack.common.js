@@ -1,15 +1,10 @@
-//require('dotenv').config({ path: './.env' });
+const Dotenv = require('dotenv-webpack')
 const path = require('path')
-const glob = require('glob')
 const tailwindcss = require('tailwindcss');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 
-
-const PATHS = {
-  src: path.join(__dirname, 'src')
-}
 
 module.exports = {
 
@@ -18,17 +13,19 @@ module.exports = {
     optimization: {
       minimize: true,
       minimizer: [new TerserPlugin()],
+
     },
 
     output:{
-      path: path.resolve(__dirname, './build'),
-      filename: 'bundle.js',
+      path: path.resolve(__dirname, "build"),
+      filename: "bundle.js",
     },
 
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
           }),
+        new Dotenv(),
 
     ],
 
@@ -41,29 +38,6 @@ module.exports = {
                   },
                     use: {
                         loader: 'babel-loader',
-                        // options: {
-
-                        //   plugins: [
-                        //     // modularly import the JS and styles that we use from ‘antd’
-                        //     [
-                        //       'import',
-                        //       { libraryName: 'antd', style: true },
-                        //       'antd',
-                        //     ],
-                        //     // modularly import the JS that we use from ‘@ant-design/icons’
-                        //     [
-                        //       'import',
-                        //       {
-                        //         libraryName: '@ant-design/icons',
-                        //         libraryDirectory: 'es/icons',
-                        //       },
-                        //       'antd-icons',
-                        //     ],
-                        //   ]
-
-                        // }
-
-                   
                     },
                     
                     exclude: [/node_modules/],

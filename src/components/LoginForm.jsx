@@ -8,16 +8,17 @@ function LoginForm({Login, error}) {
   
 
     const handleSubmit = async(values) =>{
-        
-        const response = await axios.post("api/loginuser", values);
+    
+            const response = await axios.post("api/loginuser", values);
 
-        if(response.data.stat === 1){
-         Login(response.data);
-         localStorage.setItem("sID", response.data.sID)  
-         message.success(response.data.message);
-        }else{
-         message.warning(response.data.message);
-        }
+            if(response.data.stat === 1){
+             Login(response.data);
+             localStorage.setItem("sID", response.data.sID)  
+             message.success(response.data.message);
+            }else{
+             message.warning(response.data.message);
+            }      
+        
     }
     
     const contentStyle = {
